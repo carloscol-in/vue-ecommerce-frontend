@@ -25,6 +25,23 @@ export function removeProductCartApi(slug) {
   localStorage.setItem(PRODUCTS, JSON.stringify(products));
 }
 
+// eslint-disable-next-line consistent-return
+export function removeAllProductCartApi(slug) {
+  let products = getCartApi();
+  const idx = products.indexOf(slug);
+  if (idx > -1) {
+    products.splice(idx, 1);
+    localStorage.setItem(PRODUCTS, JSON.stringify(products));
+    removeAllProductCartApi(slug);
+  } else {
+    return null;
+  }
+}
+
+export function removeCartApi() {
+  localStorage.removeItem(PRODUCTS);
+}
+
 export async function getProductsCartApi() {
   const slugs = getCartApi();
 
