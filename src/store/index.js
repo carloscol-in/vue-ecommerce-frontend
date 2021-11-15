@@ -2,7 +2,7 @@ import { createStore } from 'vuex';
 
 export default createStore({
   state: {
-    showCart: true,
+    showCart: false,
   },
   mutations: {
     toggleShowCart(state, payload) {
