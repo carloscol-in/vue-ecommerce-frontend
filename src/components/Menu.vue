@@ -20,7 +20,7 @@
         </router-link>
         <template v-if="token">
           <!-- <router-link class="item" :to="{ name: 'Order' }">Orders</router-link> -->
-          <router-link class="item" to="/orders">Orders</router-link>
+          <router-link class="item" :to="{ name: 'Orders' }">Orders</router-link>
 
           <span class="ui item cart">
             <i class="shopping cart icon" @click="openCart"></i>
